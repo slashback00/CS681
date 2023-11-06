@@ -23,7 +23,7 @@ public class Distance {
         int numOfPoints = points.size();
 
         List<List<Double>> distanceMatrix = IntStream.range(0, numOfPoints)
-                .parallel() // Use parallel stream for improved performance
+                
                 .mapToObj(i -> IntStream.range(0, numOfPoints)
                         .mapToObj(j -> Distance.get(points.get(i), points.get(j), metric))
                         .collect(Collectors.toList()))
